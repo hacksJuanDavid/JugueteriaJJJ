@@ -51,19 +51,30 @@ pip freeze > requirements.txt
 ###
 
 JugueteriaJJJ/
+├── .streamlit/
+│   ├── config.toml
 ├── backend/
-│   ├── __init__.py
-│   ├── main.py
-│   └── otros_archivos.py
+│   ├── deleteToy.py
+│   ├── insertToy.py
+│   ├── searchToy.py
+│   ├── updateToy.py
+│   └── viewToy.py
 ├── frontend/
-│   ├── __init__.py
-│   ├── index.html
-│   └── otros_archivos.html
+│   ├── admin.py
+│   ├── footer.py
+│   ├── header.py
+│   ├── sideBar.py
+│   └── toysStore.py
 ├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   └── otros_archivos_de_configuracion.py
-├── __init__.py
+│   ├── db.py
+├── public/
+│   ├── images/
+|   |  ├── logo.png
+|   |  ├── logo2.png
+|   |  ├── logo3.png
+|   |  ├── logo4.png
+├── .gitignore
+├── app.py
 ├── commands.md
-├── LICENSE
+├── README.md
 └── requirements.txt
