@@ -1,6 +1,12 @@
 # Import streamlit
 import streamlit as st
 
+# Importar insertToy de backend/insertToy.py
+from backend.insertToy import InterfaceInsert
+
+# Importar viewToy de backend/viewToy.py
+from backend.viewToy import InterfaceView
+
 # Crear una funcion para el admin
 def InterfaceAdmin():
     # Titulo
@@ -14,10 +20,8 @@ def InterfaceAdmin():
 
     # Si el tab seleccionado es 'Agregar juguetes'
     with tab1:
-        # Titulo
-        st.title('Agregar juguetes')
-        # Subtitulo
-        st.subheader('Agregar juguetes')
+        # Insertar juguetes
+        InterfaceInsert()
     
     # Si el tab seleccionado es 'Eliminar juguetes'
     with tab2:
@@ -35,8 +39,6 @@ def InterfaceAdmin():
 
     # Si el tab seleccionado es 'Ver juguetes'
     with tab4:
-        # Titulo
-        st.title('Ver juguetes')
-        # Subtitulo
-        st.subheader('Ver juguetes')
+        # Ver juguetes
+        InterfaceView()
 

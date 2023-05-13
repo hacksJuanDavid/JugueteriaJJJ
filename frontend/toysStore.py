@@ -4,6 +4,8 @@ import streamlit as st
 # Importar search
 import frontend.search as InterfaceSearch
 
+# Importar buscar juguetes de backend/searchToy.py
+from backend.searchToy import searchToyCategoria
 
 
 # Crear una carta para los juguetes
@@ -20,6 +22,22 @@ def CardToy(juguete):
         st.write(f"Marca: {juguete['marca']}")
         st.write(f"Categoria: {juguete['categoria']}")
         st.divider()
+
+
+# Crear una funcion para buscar el juguete por categoria y mostrarlo en una carta
+def searchToyCategoriaCard(categoria):
+    # Buscar el juguete por categoria
+    juguetes = searchToyCategoria(categoria)
+
+    # Si no se encuentran juguetes
+    if juguetes == None:
+        # Mostrar mensaje de error
+        st.error('No se encontraron juguetes')
+    # Si se encuentran juguetes
+    else:
+        # Mostrar los juguetes en una carta
+        for juguete in juguetes:
+            CardToy(juguete)
 
 # Crear una funcion para la pagina principal de la app
 def Home():
@@ -51,29 +69,8 @@ def Home():
         # Subtitulo
         st.subheader('Juguetes para niñas')
         
-        # Call the function CardToy
-        CardToy({
-            "nombre": "Barbie Mascotas",
-            "edad_recomendada": "3+",
-            "descripcion": "Barbie es una muñeca de plástico fabricada por la compañía estadounidense Mattel, Inc. y lanzada en marzo de 1959. Las muñecas Barbie fueron creadas por Ruth Handler, quien co-fundó Mattel con su esposo Elliot Handler, junto con la diseñadora de muñecas de Mattel Charlotte Johnson.",
-            "imagen": "http://cdn.shopify.com/s/files/1/0600/0141/9429/products/qe2any0ugvfgve4ljq6k_17d9c54b-edd3-4cb7-96c2-3472b389e5ff.jpg?v=1674180824",
-            "precio": "$ 100.000",
-            "stock": "10",
-            "marca": "Mattel",
-            "categoria": "Muñecas"
-        })
-
-        # Call the function CardToy
-        CardToy({
-            "nombre": "Barbie",
-            "edad_recomendada": "3+",
-            "descripcion": "Barbie es una muñeca de plástico fabricada por la compañía estadounidense Mattel, Inc. y lanzada en marzo de 1959. Las muñecas Barbie fueron creadas por Ruth Handler, quien co-fundó Mattel con su esposo Elliot Handler, junto con la diseñadora de muñecas de Mattel Charlotte Johnson.",
-            "imagen": "http://cdn.shopify.com/s/files/1/0600/0141/9429/products/qe2any0ugvfgve4ljq6k_17d9c54b-edd3-4cb7-96c2-3472b389e5ff.jpg?v=1674180824",
-            "precio": "$ 100.000",
-            "stock": "10",
-            "marca": "Mattel",
-            "categoria": "Muñecas"
-        })
+        # Buscar los juguetes de la categoria 'Niñas'
+        searchToyCategoriaCard('Niñas')
 
 
     # Si el tab seleccionado es 'Juguetes para niños'
@@ -82,12 +79,9 @@ def Home():
         st.title('Juguetes para niños')
         # Subtitulo
         st.subheader('Juguetes para niños')
-        # Texto
-        st.text('Aquí encontrarás los mejores juguetes para niños')
-        # Imagen
-        st.image('https://www.abc.es/Media/201505/20/juguetes--644x362.jpg')
-        # Texto
-        st.text('Aquí encontrarás los mejores juguetes para tus hijos')
+        
+        # Buscar los juguetes de la categoria 'Niños'
+        searchToyCategoriaCard('Niños')
 
     # Si el tab seleccionado es 'Juguetes Didacticos'
     with tab3:

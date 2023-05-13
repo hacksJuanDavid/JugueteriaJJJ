@@ -12,6 +12,7 @@ class Database:
             "mongodb+srv://thenowrock:UTDFdaXkbt98WtcD@first-db-mongo.bxhdjct.mongodb.net/?retryWrites=true&w=majority")
         # Create a variable for the database
         db = client["JUGUETERIAJJJ"]
+        
         # Return the database
         return db
 
