@@ -12,8 +12,8 @@ Instalar pymongo
 pip install pymongo
 ```
 ###
-Crear un entorno virtual
-
+Crear un entorno virtual solo sino existe
+```
 virtualenv env
 ```
 ###
