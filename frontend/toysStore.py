@@ -14,8 +14,10 @@ def CardToy(juguete):
     with col1:
         st.image(juguete["imagen"], width=180)
     with col2:
-        st.write(f"<h1 style='color: #9B0707'>{juguete['nombre']}</h1>", unsafe_allow_html=True)
-        st.write(f"<h3>Edad recomendada: {juguete['edad_recomendada']}</h3>", unsafe_allow_html=True)
+        st.write(
+            f"<h1 style='color: #9B0707'>{juguete['nombre']}</h1>", unsafe_allow_html=True)
+        st.write(
+            f"<h3>Edad recomendada: {juguete['edad_recomendada']}</h3>", unsafe_allow_html=True)
         st.write(f"<p>{juguete['descripcion']}</p>", unsafe_allow_html=True)
         st.write(f"Precio: {juguete['precio']}")
         st.write(f"Stock: {juguete['stock']}")
@@ -40,27 +42,31 @@ def searchToyCategoriaCard(categoria):
             CardToy(juguete)
 
 # Crear una funcion para la pagina principal de la app
+
+
 def Home():
     # Cargar la imagen de la jugueteria
     file = open("public/imagenJ.jpg", "rb")
     # Cargar una imagen en la pagina principal
     st.image(file.read(), width=700)
-    
+
+    # Titulo
+    st.title('Bienvenido a la jugueteria')
+
     # Crear 2 columnas
     col1, col2 = st.columns(2)
 
     with col1:
         # Subtitulo
-        st.subheader('Bienvenido a la jugueteria')
-    
-    with col2:
-        # Subtitulo
         st.subheader('Busca tu juguete favorito')
+
+    with col2:
         # Call the function InterfaceSearch
         InterfaceSearch.InterfaceSearch()
 
-    # Crear tabs 
-    tab1, tab2, tab3 = st.tabs(['Juguetes para niñas', 'Juguetes para niños','Juguetes Didacticos'])
+    # Crear tabs
+    tab1, tab2, tab3 = st.tabs(
+        ['Juguetes para niñas', 'Juguetes para niños', 'Juguetes Didacticos'])
 
     # Si el tab seleccionado es 'Juguetes para niñas'
     with tab1:
@@ -68,10 +74,9 @@ def Home():
         st.title('Juguetes para niñas')
         # Subtitulo
         st.subheader('Juguetes para niñas')
-        
+
         # Buscar los juguetes de la categoria 'Niñas'
         searchToyCategoriaCard('Niñas')
-
 
     # Si el tab seleccionado es 'Juguetes para niños'
     with tab2:
@@ -79,7 +84,7 @@ def Home():
         st.title('Juguetes para niños')
         # Subtitulo
         st.subheader('Juguetes para niños')
-        
+
         # Buscar los juguetes de la categoria 'Niños'
         searchToyCategoriaCard('Niños')
 
@@ -89,21 +94,13 @@ def Home():
         st.title('Juguetes Didacticos')
         # Subtitulo
         st.subheader('Juguetes Didacticos')
-        # Texto
-        st.text('Aquí encontrarás los mejores juguetes Didacticos')
-        # Imagen
-        st.image('https://www.abc.es/Media/201505/20/juguetes--644x362.jpg')
-        # Texto
-        st.text('Aquí encontrarás los mejores juguetes Didacticos')
+
+        # Buscar los juguetes de la categoria 'Niños'
+        searchToyCategoriaCard('Juguetes Didacticos')
 
 # Crear una funcion para la pagina de juguetes
+
+
 def InterfaceHome():
     # Call the function PagPrincipal
     Home()
-
-
-
-    
-
-    
-
