@@ -44,10 +44,6 @@ Ejecutar el programa
 streamlit run app.py
 ```
 ###
-Crear un archivo requirements.txt
-```
-pip freeze > requirements.txt
-```
 ###
 
 JugueteriaJJJ/
@@ -78,3 +74,4 @@ JugueteriaJJJ/
 ├── commands.md
 ├── README.md
 └── requirements.txt
+###
