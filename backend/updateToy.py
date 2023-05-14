@@ -12,7 +12,7 @@ def InterfaceEdit():
     # Crear un input para buscar el juguete
     search_term = st.text_input(
         'Buscar juguete por nombre:', key='search_term')
-    button = st.button('Actualizar datos')
+    button = st.button('Actualizar')
 
     if button:
         # Si se ha ingresado un termino de busqueda
