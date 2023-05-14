@@ -96,7 +96,7 @@ def Home():
         st.subheader('Juguetes Didacticos')
 
         # Buscar los juguetes de la categoria 'Niños'
-        searchToyCategoriaCard('Juguetes Didacticos')
+        searchToyCategoriaCard('Didacticos')
 
 # Crear una funcion para la pagina de juguetes
 
