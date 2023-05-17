@@ -44,7 +44,11 @@ Ejecutar el programa
 streamlit run app.py
 ```
 ###
-Mi página web: [JugueteriaJJJ]([enlace-de-tu-pagina](https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app/))
+```
+Mi página web: https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app
+
+```
+[Deply página JugueteriaJJJ](https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app)
 
 ###
 
