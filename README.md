@@ -1,4 +1,12 @@
 ###
+```
+Deploy página web: https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app
+
+```
+#[Deploy página JugueteriaJJJ](https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app)
+
+###
+###
 Instalar streamlit
 ```
 pip install streamlit
@@ -43,15 +51,7 @@ Ejecutar el programa
 ```
 streamlit run app.py
 ```
-###
 ```
-Mi página web: https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app
-
-```
-[Deply página JugueteriaJJJ](https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app)
-
-###
-
 JugueteriaJJJ/
 ├── .streamlit/
 │   ├── config.toml
@@ -80,4 +80,5 @@ JugueteriaJJJ/
 ├── commands.md
 ├── README.md
 └── requirements.txt
+```
 ###
