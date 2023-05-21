@@ -2,6 +2,8 @@ import config.db as db
 import streamlit as st
 import pandas as pd
 
+#importar time
+import time 
 
 # Crear una funcion para editar los datos de un juguete
 
@@ -68,8 +70,27 @@ def InterfaceEdit():
             # Crear un boton para actualizar los datos del juguete
             submit_button = st.form_submit_button(label='Actualizar')
 
-            # al presionar el boton de actualizar se actualizan los datos del juguete
-            if submit_button:
+        # al presionar el boton de actualizar se actualizan los datos del juguete
+        if submit_button:
+            # Texto de carga
+            with st.spinner('Actualizando datos del juguete...'):
+                time.sleep(1)
+
+            # Validar que los campos edad recomendada, precio y stock sean numericos
+            if not edad_recomendada.isnumeric():
+                st.error('La edad recomendada debe ser un numero')
+
+            elif not precio.isnumeric():
+                st.error('El precio debe ser un numero')
+
+            elif not stock.isnumeric():
+                st.error('El stock debe ser un numero')
+
+            # Validar que el resto de los campos no esten vacios
+            elif name == '' or edad_recomendada == '' or descripcion == '' or imagen == '' or precio == '' or stock == '' or marca == '':
+                st.error('Todos los campos son obligatorios')
+            # Si todos los campos son validos se actualizan los datos del juguete
+            else:
                 # Actualizar los datos del juguete
                 db.db["juguetes"].update_one({'nombre': search_term}, {
                     '$set': {
