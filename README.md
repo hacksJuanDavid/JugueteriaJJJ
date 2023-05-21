@@ -1,9 +1,9 @@
 ###
 ```
-Deploy página web: https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app
+Deploy página web: https://hacksjuandavid-jugueteriajjj-app-0xbplf.streamlit.app/
 
 ```
-#[Deploy página JugueteriaJJJ](https://hacksjuandavid-jugueteriajjj-app-kscgsj.streamlit.app)
+#[Deploy página JugueteriaJJJ](https://hacksjuandavid-jugueteriajjj-app-0xbplf.streamlit.app/)
 
 ###
 ###
