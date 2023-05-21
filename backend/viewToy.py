@@ -5,6 +5,8 @@ import streamlit as st
 import config.db as db
 
 # Crear una funcion para traer los juguetes de la base de datos
+
+
 def getToys():
     # Crear una lista vacia para guardar los juguetes
     toys = []
@@ -16,11 +18,13 @@ def getToys():
     for toy in toys_db:
         # Agregar el juguete a la lista
         toys.append(toy)
-    
+
     # Retornar la lista de juguetes
     return toys
 
 # Crear una funcion para traer los juguetes
+
+
 def InterfaceView():
     # Titulo
     st.title('Ver juguetes')
@@ -31,4 +35,3 @@ def InterfaceView():
 
     # Mostrar el dataframe
     st.dataframe(df)
-

@@ -5,11 +5,15 @@ import streamlit as st
 from backend.searchToy import searchToyName
 
 # Crear una funcion para presentar el juguete
+
+
 def CardToy(juguete):
     row = st.columns([1, 1, 1, 1, 1])
     row[0].image(juguete['imagen'], width=200)
-    st.write(f"<h1 style='color: #9B0707'>{juguete['nombre']}</h1>", unsafe_allow_html=True)
-    st.write(f"<h3>Edad recomendada: {juguete['edad_recomendada']}</h3>", unsafe_allow_html=True)
+    st.write(
+        f"<h1 style='color: #49A0E8''>{juguete['nombre']}</h1>", unsafe_allow_html=True)
+    st.write(
+        f"<h3>Edad recomendada: {juguete['edad_recomendada']}</h3>", unsafe_allow_html=True)
     st.write(f"<p>{juguete['descripcion']}</p>", unsafe_allow_html=True)
     st.write(f"Precio: {juguete['precio']}")
     st.write(f"Stock: {juguete['stock']}")
@@ -37,7 +41,8 @@ def searchToyNameCard(name):
 # Creamos una funcion para buscar juguetes
 def InterfaceSearch():
     # Crear un input para buscar juguetes
-    search = st.text_input(' ',placeholder='Buscar por nombre juguete', label_visibility='hidden', key='input_search', type='default')
+    search = st.text_input(' ', placeholder='Buscar por nombre juguete',
+                           label_visibility='hidden', key='input_search', type='default')
 
     # Boton para buscar juguetes
     button = st.button('Buscar')
@@ -51,4 +56,3 @@ def InterfaceSearch():
 
         # Buscar juguetes por nombre y presentarlos
         searchToyNameCard(search)
-  

@@ -2,10 +2,11 @@ import config.db as db
 import streamlit as st
 import pandas as pd
 
-#importar time
-import time 
+# importar time
+import time
 
 # Crear una funcion para editar los datos de un juguete
+
 
 def InterfaceEdit():
     # Titulo

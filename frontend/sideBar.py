@@ -6,8 +6,10 @@ import frontend.toysStore as InterfaceHome
 import frontend.admin as InterfaceAdmin
 
 # Crear una funcion para el side bar
+
+
 def SideBar():
-    # Cargar el archivo del gif 
+    # Cargar el archivo del gif
     file = open("public/logosiderbard.gif", "rb")
     # Cargar una gif en el side bar
     st.sidebar.image(file.read(), width=300)

@@ -15,24 +15,27 @@ from backend.deleteToy import InterfaceDelete
 from backend.updateToy import InterfaceEdit
 
 # Crear una funcion para el admin
+
+
 def InterfaceAdmin():
     # Titulo
     st.title('Administrador')
-    
+
     # Subtitulo
     st.subheader('Controlar la jugueteria JJJ')
 
     # Crear tabs
-    tab1, tab2, tab3, tab4 = st.tabs(['Agregar juguetes', 'Eliminar juguetes', 'Actualizar juguetes', 'Ver juguetes'])
+    tab1, tab2, tab3, tab4 = st.tabs(
+        ['Agregar juguetes', 'Eliminar juguetes', 'Actualizar juguetes', 'Ver juguetes'])
 
     # Si el tab seleccionado es 'Agregar juguetes'
     with tab1:
         # Insertar juguetes
         InterfaceInsert()
-    
+
     # Si el tab seleccionado es 'Eliminar juguetes'
     with tab2:
-       #Eliminar Juguete
+       # Eliminar Juguete
         InterfaceDelete()
     with tab3:
         # Editar Datos Juguetes
@@ -42,4 +45,3 @@ def InterfaceAdmin():
     with tab4:
         # Ver juguetes
         InterfaceView()
-

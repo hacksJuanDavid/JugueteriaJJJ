@@ -4,6 +4,8 @@ import streamlit as st
 import base64
 
 # Crear una funcion para el footer
+
+
 def Footer():
     with open("public/footerlogo.gif", "rb") as file:
         img = file.read()
@@ -25,7 +27,8 @@ def Footer():
         st.markdown(footer, unsafe_allow_html=True)
 
 # Crear una funcion para el footer
+
+
 def InterfaceFooter():
     # Call the function Footer
     Footer()
-
