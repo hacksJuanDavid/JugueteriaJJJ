@@ -15,7 +15,7 @@ def CardToy(juguete):
         st.image(juguete["imagen"], width=180)
     with col2:
         st.write(
-            f"<h1 style='color: #9B0707'>{juguete['nombre']}</h1>", unsafe_allow_html=True)
+            f"<h1 style='color: #49A0E8'>{juguete['nombre']}</h1>", unsafe_allow_html=True)
         st.write(
             f"<h3>Edad recomendada: {juguete['edad_recomendada']}</h3>", unsafe_allow_html=True)
         st.write(f"<p>{juguete['descripcion']}</p>", unsafe_allow_html=True)
