@@ -1,6 +1,8 @@
 # Import streamlit
+import base64
 import streamlit as st
-
+from PIL import Image
+import io
 # Importar search
 import frontend.search as InterfaceSearch
 
@@ -45,10 +47,25 @@ def searchToyCategoriaCard(categoria):
 
 
 def Home():
-    # Cargar la imagen de la jugueteria
-    file = open("public/imagenJ.jpg", "rb")
-    # Cargar una imagen en la pagina principal
-    st.image(file.read(), width=700)
+    # Cargar la imagen de la juguetería
+    image = Image.open("public/imagenJ.jpg")
+
+    # Convertir la imagen en un búfer de bytes
+    buffer = io.BytesIO()
+    image.save(buffer, format="JPEG")
+
+    # Obtener el contenido de la imagen en base64
+    b64_img = base64.b64encode(buffer.getvalue()).decode()
+
+    # Crear el fragmento HTML para la imagen centrada
+    img_logo_jjj = f"""
+    <div style="display: flex; justify-content: center;">
+        <img src="data:image/jpeg;base64,{b64_img}" width="700" alt="Imagen de la juguetería">
+    </div>
+    """
+
+    # Mostrar el fragmento HTML en la página
+    st.markdown(img_logo_jjj, unsafe_allow_html=True)
 
     # Titulo
     st.title('Bienvenido a la jugueteria')
